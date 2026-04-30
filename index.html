@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lori — Senior Backend Engineer @ 99.co · Go, Python, Systems at Scale</title>
+    <meta name="description" content="I build backends that serve 70M+ users. Senior Backend Engineer at 99.co — previously Kredivo (1M+ DAU payments) and Jublia. 5+ years across Go, Python, and JavaScript. I write about engineering at lori.my.id.">
+    <meta name="author" content="Lori">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#020617">
+    <link rel="canonical" href="https://profile.lori.my.id/">
+
+    <!-- Open Graph (Facebook, LinkedIn, Slack, Discord, Telegram link previews) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Lori — Profile">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://profile.lori.my.id/">
+    <meta property="og:title" content="Lori — Senior Backend Engineer @ 99.co">
+    <meta property="og:description" content="I build backends that serve 70M+ users. 5+ years in Go, Python, and JavaScript across PropTech, FinTech, and AI platforms. Side projects and engineering writing at lori.my.id.">
+    <meta property="og:image" content="https://profile.lori.my.id/og-banner.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Lori — Software Engineer">
+    <meta property="profile:first_name" content="Lori">
+    <meta property="profile:username" content="chud-lori">
+
+    <!-- Twitter / X link preview (large banner-style card) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lori — Senior Backend Engineer @ 99.co">
+    <meta name="twitter:description" content="I build backends that serve 70M+ users. 5+ years in Go, Python, and JavaScript across PropTech, FinTech, and AI platforms. Side projects and engineering writing at lori.my.id.">
+    <meta name="twitter:image" content="https://profile.lori.my.id/og-banner.png">
+    <meta name="twitter:image:alt" content="Lori — Senior Backend Engineer @ 99.co">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/jpeg" href="https://profile.lori.my.id/me.jpg">
+    <link rel="apple-touch-icon" href="https://profile.lori.my.id/me.jpg">
+
+    <!-- Structured data: tells Google "this is a person" so it can show a rich profile card -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lori",
+      "alternateName": "N. Chudlori",
+      "url": "https://profile.lori.my.id/",
+      "image": "https://profile.lori.my.id/me.jpg",
+      "email": "mailto:reachme@lori.my.id",
+      "jobTitle": "Senior Backend Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "99.co",
+        "url": "https://www.99.co/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Surakarta",
+        "addressCountry": "Indonesia"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universitas Muhammadiyah Surakarta"
+      },
+      "sameAs": [
+        "https://github.com/chud-lori",
+        "https://www.linkedin.com/in/chud-lori/",
+        "https://lori.my.id/",
+        "https://chud-lori.medium.com/"
+      ],
+      "knowsAbout": [
+        "Go", "Python", "JavaScript", "Rust",
+        "Backend Engineering", "Microservices", "Clean Architecture",
+        "PostgreSQL", "Redis", "Kubernetes", "AWS",
+        "Observability", "Application Security"
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg:           #020617;
+            --surface:      rgba(15, 23, 42, 0.7);
+            --surface-2:    rgba(30, 41, 59, 0.5);
+            --text:         #f8fafc;
+            --text-dim:     #94a3b8;
+            --text-muted:   #64748b;
+            --border:       rgba(255, 255, 255, 0.07);
+            --border-strong:rgba(255, 255, 255, 0.14);
+            --accent:       #10b981;
+            --accent-glow:  rgba(16, 185, 129, 0.18);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(circle at 15% 0%, rgba(16,185,129,0.07), transparent 35%),
+                radial-gradient(circle at 85% 5%, rgba(59,130,246,0.06), transparent 40%),
+                radial-gradient(circle, rgba(148,163,184,0.07) 1px, transparent 1px);
+            background-size: auto, auto, 28px 28px;
+            color: var(--text);
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        a { color: inherit; }
+        a:hover { color: var(--accent); }
+
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+        .container-narrow { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── Cursor glow (desktop / fine pointer only) ── */
+        #cursor-glow {
+            position: fixed;
+            top: 0; left: 0;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(16,185,129,0.05) 0%, rgba(59,130,246,0.02) 40%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            display: none;
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-14px) scale(0.92); }
+            to   { opacity: 1; transform: none; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(18px); }
+            to   { opacity: 1; transform: none; }
+        }
+        @keyframes pulse-ring {
+            0%   { box-shadow: 0 0 0 0   var(--accent-glow); }
+            70%  { box-shadow: 0 0 0 14px rgba(16,185,129,0); }
+            100% { box-shadow: 0 0 0 0   rgba(16,185,129,0); }
+        }
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ── Nav ── */
+        nav {
+            position: sticky; top: 0; z-index: 50;
+            background: rgba(2, 6, 23, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            height: 56px;
+        }
+        .nav-brand {
+            font-weight: 600; color: var(--text);
+            display: flex; align-items: center; gap: 8px;
+            text-decoration: none; font-size: 0.95rem;
+        }
+        .nav-brand:hover { color: var(--accent); }
+        .nav-brand .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--accent);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+        .nav-links { display: flex; gap: 4px; }
+        .nav-links a {
+            color: var(--text-dim); padding: 6px 12px; border-radius: 6px;
+            font-size: 0.85rem; text-decoration: none;
+            transition: color 0.15s, background 0.15s;
+        }
+        .nav-links a:hover { color: var(--text); background: var(--surface); }
+        @media (max-width: 600px) {
+            .nav-links a { padding: 6px 8px; font-size: 0.8rem; }
+        }
+        @media (max-width: 420px) {
+            .nav-inner { height: 52px; }
+            .nav-brand { font-size: 0.82rem; }
+            .nav-brand .dot { width: 7px; height: 7px; }
+            .nav-links { gap: 0; }
+            .nav-links a { padding: 6px 4px; font-size: 0.7rem; }
+            .container, .container-narrow { padding: 0 14px; }
+        }
+        @media (max-width: 360px) {
+            /* Drop "Lori" brand text on tiny screens to give nav links breathing room */
+            .nav-brand span:not(.dot) { display: none; }
+            .nav-links a { padding: 6px 3px; font-size: 0.66rem; letter-spacing: -0.01em; }
+            .container, .container-narrow { padding: 0 10px; }
+        }
+
+        /* ── Hero (engineer-portfolio style: left-aligned, conversational) ── */
+        .hero {
+            padding: 80px 0 48px;
+            position: relative;
+            z-index: 1;
+        }
+        .avatar {
+            width: 100px; height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            margin-bottom: 22px;
+            border: 2px solid rgba(255,255,255,0.12);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 6vw, 3rem);
+            margin: 0 0 28px;
+            letter-spacing: -0.025em;
+            line-height: 1.05;
+            font-weight: 700;
+            color: var(--text);
+            animation: fadeInDown 0.5s ease-out both;
+        }
+
+        .lead {
+            color: var(--text);
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            line-height: 1.65;
+            margin: 0 0 18px;
+            max-width: 640px;
+            animation: fadeInUp 0.5s 0.1s ease-out both;
+        }
+        .lead a {
+            color: var(--text);
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+        .lead a:hover { color: var(--accent); }
+        .lead strong { color: var(--text); font-weight: 600; }
+        .lead-quiet { color: var(--text-dim); font-size: 0.96rem; }
+
+        .social-row {
+            margin-top: 26px;
+            display: flex; flex-wrap: wrap; gap: 10px;
+            color: var(--text-dim); font-size: 0.9rem;
+            animation: fadeInUp 0.5s 0.2s ease-out both;
+        }
+        .social-row a {
+            color: var(--text-dim); text-decoration: none;
+            border-bottom: 1px solid var(--border-strong);
+            padding-bottom: 1px;
+            transition: color 0.15s, border-color 0.15s;
+        }
+        .social-row a:hover { color: var(--accent); border-color: var(--accent); }
+        .social-row .dot-sep { color: var(--text-muted); user-select: none; }
+
+        /* ── Stats strip ── */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin: 40px auto 0;
+            max-width: 460px;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+            animation: fadeInDown 0.6s 0.5s ease-out both;
+        }
+        .stat {
+            display: flex; flex-direction: column; align-items: center;
+            border-right: 1px solid var(--border);
+            padding: 4px 8px;
+        }
+        .stat:last-child { border-right: none; }
+        .stat .num {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 700; color: var(--accent);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            line-height: 1.1;
+        }
+        .stat .lbl {
+            font-size: 0.7rem; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.05em;
+            margin-top: 4px; text-align: center;
+        }
+        @media (max-width: 420px) {
+            .stats { grid-template-columns: 1fr; gap: 14px 0; }
+            .stat { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 14px; }
+            .stat:last-child { border-bottom: none; padding-bottom: 0; }
+        }
+
+        /* ── Contact card with avatar ── */
+        .contact-card {
+            display: flex; align-items: center; gap: 18px;
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 18px 22px;
+            margin-bottom: 16px;
+        }
+        .contact-card .avatar-sm {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center top;
+            flex-shrink: 0;
+            border: 2px solid var(--border-strong);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+        .contact-card .info { flex: 1; min-width: 0; }
+        .contact-card .info .name {
+            font-size: 1.05rem; font-weight: 600; color: var(--text);
+            margin: 0 0 2px;
+        }
+        .contact-card .info .role {
+            color: var(--text-dim); font-size: 0.85rem; margin: 0;
+        }
+        .contact-card .info .role .accent { color: var(--accent); font-weight: 500; }
+
+        /* ── Sections ── */
+        section { padding: 56px 0; position: relative; z-index: 1; }
+        .section-head {
+            display: flex; align-items: baseline; gap: 14px;
+            margin-bottom: 28px; padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-head h2 {
+            font-size: 1.3rem; margin: 0; font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+        .section-head .count {
+            color: var(--text-muted);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 0.78rem;
+        }
+
+        /* ── About ── */
+        .about p {
+            color: var(--text-dim); margin: 0 0 16px;
+            font-size: 0.97rem;
+        }
+        .about p strong { color: var(--text); font-weight: 500; }
+        .about p:last-child { margin-bottom: 0; }
+
+        /* ── Quick links (linktree-style, kept from original) ── */
+        .quick-links {
+            max-width: 460px; margin: 0 auto;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            text-align: left;
+            margin: 18px 0 6px 4px;
+        }
+        .section-label:first-child { margin-top: 0; }
+
+        .link-card {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            padding: 14px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s, transform 0.2s;
+        }
+        @media (hover: hover) {
+            .link-card:hover { background: rgba(255,255,255,0.05); transform: translateY(-3px); color: var(--text); }
+            .link-card:hover .card-arrow { opacity: 1; transform: translateX(3px); }
+            .link-card.literature:hover { border-color: #1e3a8a; box-shadow: 0 0 22px rgba(30,58,138,0.35); }
+            .link-card.tech:hover        { border-color: #475569; box-shadow: 0 0 22px rgba(71,85,105,0.25); }
+            .link-card.finance:hover     { border-color: #065f46; box-shadow: 0 0 22px rgba(6,95,70,0.35); }
+            .link-card.stream:hover      { border-color: #b91c1c; box-shadow: 0 0 22px rgba(185,28,28,0.35); }
+            .link-card.ethok:hover       { border-color: #3b82f6; box-shadow: 0 0 22px rgba(59,130,246,0.35); }
+            .link-card.ldr:hover         { border-color: #f43f5e; box-shadow: 0 0 22px rgba(244,63,94,0.35); }
+            .link-card.dolanan:hover     { border-color: #2563eb; box-shadow: 0 0 22px rgba(37,99,235,0.35); }
+            .link-card.social:hover      { border-color: #7f1d1d; box-shadow: 0 0 22px rgba(127,29,29,0.30); }
+        }
+        .link-card:active { transform: scale(0.97); background: rgba(255,255,255,0.06); }
+
+        .card-icon {
+            width: 18px;
+            height: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            flex-shrink: 0;
+        }
+        .card-icon svg {
+            width: 18px;
+            height: 18px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        .card-body { flex: 1; text-align: left; display: flex; flex-direction: column; gap: 2px; }
+        .card-title { font-size: 0.95rem; font-weight: 600; color: var(--text); }
+        .card-desc { font-size: 0.78rem; color: var(--text-dim); font-weight: 400; }
+        .card-arrow {
+            width: 16px; height: 16px;
+            fill: none; stroke: var(--text-dim);
+            stroke-width: 2; flex-shrink: 0;
+            opacity: 0.4; transition: opacity 0.2s, transform 0.2s;
+        }
+        svg.brand-icon { width: 18px; height: 18px; fill: currentColor; flex-shrink: 0; }
+
+        /* ── Project grid (portfolio) ── */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: 16px;
+        }
+        .project-card {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
+            display: flex; flex-direction: column;
+            transition: border-color 0.2s, transform 0.2s, background 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0; transition: opacity 0.2s;
+        }
+        @media (hover: hover) {
+            .project-card:hover {
+                border-color: var(--border-strong);
+                background: rgba(30, 41, 59, 0.6);
+                transform: translateY(-3px);
+            }
+            .project-card:hover::before { opacity: 1; }
+        }
+
+        .pc-head {
+            display: flex; align-items: flex-start; justify-content: space-between;
+            gap: 12px; margin-bottom: 8px;
+        }
+        .pc-title {
+            font-size: 1rem; font-weight: 600; color: var(--text);
+            margin: 0;
+        }
+        .pc-title a { color: var(--text); text-decoration: none; }
+        .pc-title a:hover { color: var(--accent); }
+
+        .pc-badge {
+            flex-shrink: 0;
+            font-size: 0.68rem; padding: 3px 8px; border-radius: 4px;
+            background: var(--accent-glow); color: var(--accent);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            border: 1px solid rgba(16,185,129,0.25);
+            text-transform: lowercase;
+        }
+        .pc-desc {
+            color: var(--text-dim); font-size: 0.86rem; line-height: 1.55;
+            margin: 0 0 14px; flex-grow: 1;
+        }
+        .pc-tech {
+            display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px;
+        }
+        .tech {
+            font-size: 0.7rem; padding: 3px 8px; border-radius: 4px;
+            background: var(--surface-2); color: var(--text-dim);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            border: 1px solid var(--border);
+        }
+        .pc-links {
+            display: flex; gap: 14px;
+            font-size: 0.8rem;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+        .pc-links a {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: var(--text-dim); text-decoration: none;
+        }
+        .pc-links a:hover { color: var(--accent); }
+        .pc-links svg { width: 13px; height: 13px; }
+
+        /* ── More repos (compact) ── */
+        .compact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+            gap: 10px;
+        }
+        .compact-item {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            text-decoration: none;
+            display: block;
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .compact-item:hover { border-color: var(--border-strong); background: rgba(30, 41, 59, 0.6); }
+        .compact-item .ci-title {
+            color: var(--text); font-weight: 500; font-size: 0.9rem;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .compact-item:hover .ci-title { color: var(--accent); }
+        .compact-item p { margin: 4px 0 0; color: var(--text-dim); font-size: 0.78rem; }
+        .compact-item .arrow { transition: transform 0.2s; }
+        .compact-item:hover .arrow { transform: translateX(3px); }
+
+        /* ── Skills ── */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+            gap: 14px;
+        }
+        .skill-group {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 18px;
+        }
+        .skill-group h3 {
+            font-size: 0.78rem; margin: 0 0 10px;
+            color: var(--accent); text-transform: uppercase;
+            letter-spacing: 0.08em; font-weight: 600;
+        }
+        .skill-group ul {
+            list-style: none; padding: 0; margin: 0;
+            display: flex; flex-wrap: wrap; gap: 6px;
+        }
+        .skill-group li {
+            font-size: 0.75rem; color: var(--text-dim);
+            padding: 3px 8px; border-radius: 4px;
+            background: var(--surface-2); border: 1px solid var(--border);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+        }
+
+        /* ── Experience timeline ── */
+        .timeline {
+            display: flex; flex-direction: column;
+            position: relative;
+        }
+        .xp {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 22px;
+            margin-bottom: 14px;
+            transition: border-color 0.2s, background 0.2s;
+            position: relative;
+        }
+        .xp:last-child { margin-bottom: 0; }
+        @media (hover: hover) {
+            .xp:hover { border-color: var(--border-strong); background: rgba(30, 41, 59, 0.6); }
+        }
+        .xp-head {
+            display: flex; align-items: baseline; justify-content: space-between;
+            gap: 14px; flex-wrap: wrap; margin-bottom: 4px;
+        }
+        .xp-title { font-size: 1rem; font-weight: 600; color: var(--text); margin: 0; }
+        .xp-title .sep { color: var(--text-muted); font-weight: 400; margin: 0 6px; }
+        .xp-title .company { color: var(--accent); }
+        .xp-date {
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 0.78rem; color: var(--text-muted);
+            white-space: nowrap;
+        }
+        .xp-loc {
+            font-size: 0.78rem; color: var(--text-dim);
+            margin: 0 0 10px;
+        }
+        .xp-summary {
+            font-size: 0.85rem; color: var(--text-dim);
+            margin: 0 0 10px; font-style: italic;
+        }
+        .xp ul {
+            margin: 0; padding-left: 18px;
+            color: var(--text-dim); font-size: 0.88rem;
+            line-height: 1.6;
+        }
+        .xp ul li { margin-bottom: 4px; }
+        .xp ul li::marker { color: var(--accent); }
+        .xp ul li strong { color: var(--text); font-weight: 500; }
+        .xp-current {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 0.7rem; padding: 2px 8px; border-radius: 999px;
+            background: var(--accent-glow); color: var(--accent);
+            border: 1px solid rgba(16,185,129,0.25);
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            margin-left: 8px; vertical-align: middle;
+        }
+        .xp-current .pulse {
+            width: 5px; height: 5px; border-radius: 50%; background: var(--accent);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        /* ── Writing list ── */
+        .writing-list {
+            display: flex; flex-direction: column;
+            border-top: 1px solid var(--border);
+        }
+        .writing-item {
+            display: flex; align-items: baseline;
+            gap: 16px; padding: 16px 4px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+            transition: padding 0.2s, background 0.2s;
+        }
+        .writing-item:hover { background: rgba(255,255,255,0.02); padding-left: 12px; padding-right: 12px; }
+        .writing-item .w-date {
+            flex-shrink: 0;
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 0.75rem; color: var(--text-muted);
+            min-width: 80px;
+        }
+        .writing-item .w-body { flex: 1; min-width: 0; }
+        .writing-item .w-title {
+            color: var(--text); font-weight: 500;
+            font-size: 0.95rem;
+            display: block; margin-bottom: 4px;
+            transition: color 0.15s;
+        }
+        .writing-item:hover .w-title { color: var(--accent); }
+        .writing-item .w-excerpt {
+            color: var(--text-dim); font-size: 0.82rem;
+            line-height: 1.5;
+        }
+        .writing-item .w-arrow {
+            color: var(--text-muted); flex-shrink: 0;
+            transition: transform 0.2s, color 0.15s;
+            font-size: 1.1rem; align-self: center;
+        }
+        .writing-item:hover .w-arrow { color: var(--accent); transform: translateX(4px); }
+        .writing-more {
+            margin-top: 18px; text-align: center;
+        }
+        .writing-more a {
+            color: var(--text-dim); font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 14px; border-radius: 6px;
+            border: 1px solid var(--border);
+            transition: all 0.15s;
+        }
+        .writing-more a:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-glow); }
+
+        @media (max-width: 600px) {
+            .writing-item { flex-wrap: wrap; gap: 4px 16px; }
+            .writing-item .w-date { min-width: 0; order: 0; }
+            .writing-item .w-arrow { display: none; }
+            .writing-item .w-body { flex-basis: 100%; }
+        }
+
+        /* ── Footer ── */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        footer .built {
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            font-size: 0.72rem;
+            margin-top: 6px;
+            color: #475569;
+        }
+
+        /* ── Toast ── */
+        .toast {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: #001b10;
+            padding: 10px 18px; border-radius: 8px;
+            font-size: 0.86rem; font-weight: 500;
+            opacity: 0; pointer-events: none;
+            transition: opacity 0.2s, transform 0.2s;
+            z-index: 100;
+        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(-4px); }
+    </style>
+</head>
+<body>
+
+<div id="cursor-glow"></div>
+
+<nav>
+    <div class="container nav-inner">
+        <a href="#top" class="nav-brand"><span class="dot"></span> Lori</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#writing">Writing</a>
+            <a href="#links">Links</a>
+        </div>
+    </div>
+</nav>
+
+<main id="top">
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="container-narrow">
+            <h1>Lori</h1>
+            <p class="lead">
+                I'm a software engineer based in Surakarta, Indonesia. Currently
+                <strong>Senior Backend Engineer at <a href="https://www.99.co/" target="_blank" rel="noopener">99.co</a></strong>,
+                building PropTech systems that serve 70M+ users. Previously
+                <a href="https://www.kredivo.com/" target="_blank" rel="noopener">Kredivo</a> (FinTech, Core Banking)
+                and <a href="https://jublia.com/" target="_blank" rel="noopener">Jublia</a> (AI event matchmaking).
+            </p>
+            <p class="lead lead-quiet">
+                I write about engineering at <a href="https://lori.my.id/" target="_blank" rel="noopener">lori.my.id</a>
+                and ship side projects in Go, Python, PHP, and Javascript. Currently open to new opportunities.
+            </p>
+            <div class="social-row">
+                <a href="https://github.com/chud-lori" target="_blank" rel="noopener">GitHub</a>
+                <span class="dot-sep">·</span>
+                <a href="https://www.linkedin.com/in/chud-lori/" target="_blank" rel="noopener">LinkedIn</a>
+                <span class="dot-sep">·</span>
+                <a href="mailto:reachme@lori.my.id">Email</a>
+                <span class="dot-sep">·</span>
+                <a href="https://lori.my.id/" target="_blank" rel="noopener">Blog</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="about">
+        <div class="container-narrow">
+            <div class="section-head">
+                <h2>About</h2>
+                <span class="count">// who</span>
+            </div>
+            <p>
+                I started with Linux server admin in vocational school and have been writing
+                software professionally for 5+ years — these days mostly Go and Python backends.
+                I gravitate toward systems work: clean architecture, observability, and the
+                pragmatic security mindset I picked up from CTF competitions
+                (1st place at National Gemastik, Network Security).
+            </p>
+            <p>
+                Outside paid work I ship side projects to scratch my own itches and write about
+                engineering at <a href="https://lori.my.id/" target="_blank" rel="noopener">lori.my.id</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ── EXPERIENCE ── -->
+    <section id="experience">
+        <div class="container-narrow">
+            <div class="section-head">
+                <h2>Experience</h2>
+                <span class="count">// where</span>
+            </div>
+            <div class="timeline">
+
+                <article class="xp">
+                    <div class="xp-head">
+                        <h3 class="xp-title">Senior Backend Engineer<span class="sep">·</span><span class="company">99.co Singapore</span><span class="xp-current"><span class="pulse"></span>now</span></h3>
+                        <span class="xp-date">Sep 2025 – Present</span>
+                    </div>
+                    <p class="xp-loc">Jakarta, Indonesia · PropTech for SG &amp; ID</p>
+                    <ul>
+                        <li><strong>Shipped a $300–$1,080/mo paid feature solo in &lt;2 months</strong> across 6+ microservices with atomic payment processing — zero incidents at launch.</li>
+                        <li><strong>Built search-optimization system serving 70M+ users</strong> with dynamic SEO content across 6+ property segments.</li>
+                        <li><strong>Security fix: identified &amp; closed a credit vulnerability preventing ~$200k/month revenue leak.</strong></li>
+                    </ul>
+                </article>
+
+                <article class="xp">
+                    <div class="xp-head">
+                        <h3 class="xp-title">Software Engineer<span class="sep">·</span><span class="company">Freelance</span></h3>
+                        <span class="xp-date">Dec 2024 – Sep 2025</span>
+                    </div>
+                    <p class="xp-loc">Remote</p>
+                    <ul>
+                        <li>Built backend for an application of one of <strong>Indonesia's Ministries</strong>.</li>
+                        <li>Mentored vocational-school teachers on Laravel and REST API design.</li>
+                        <li>Delivered small projects through Fiverr.</li>
+                    </ul>
+                </article>
+
+                <article class="xp">
+                    <div class="xp-head">
+                        <h3 class="xp-title">Software Engineer<span class="sep">·</span><span class="company">Kredivo</span></h3>
+                        <span class="xp-date">Sep 2024 – Dec 2024</span>
+                    </div>
+                    <p class="xp-loc">Jakarta, Indonesia · SE Asia FinTech (digital credit, lending, banking)</p>
+                    <ul>
+                        <li><strong>Core Banking Squad</strong> — built scalable services handling payment processing for <strong>1M+ daily active users</strong>.</li>
+                        <li>Drove unit-test coverage above <strong>67%</strong> across the codebase.</li>
+                        <li>Managed and optimised a scalable, event-driven architecture on <strong>AWS SQS</strong>.</li>
+                    </ul>
+                </article>
+
+                <article class="xp">
+                    <div class="xp-head">
+                        <h3 class="xp-title">Software Engineer<span class="sep">·</span><span class="company">Jublia</span></h3>
+                        <span class="xp-date">Jan 2022 – Aug 2024</span>
+                    </div>
+                    <p class="xp-loc">Remote · AI-powered global event-matchmaking platform</p>
+                    <ul>
+                        <li><strong>Platform observability:</strong> rolled out New Relic and rebuilt the core Event App, cutting load times <strong>from seconds to milliseconds</strong> and exposing real-time bottlenecks.</li>
+                        <li><strong>Scalable infra &amp; AI:</strong> engineered a high-concurrency Live Stream-to-VOD pipeline on Amazon IVS; built a RAG system with FastAPI, OpenSearch, and LangChain/LlamaIndex.</li>
+                        <li><strong>1st place</strong> at the Jublia Internal Hackathon (2023).</li>
+                    </ul>
+                </article>
+
+                <article class="xp">
+                    <div class="xp-head">
+                        <h3 class="xp-title">Research Assistant<span class="sep">·</span><span class="company">Universitas Muhammadiyah Surakarta</span></h3>
+                        <span class="xp-date">Aug 2021 – Aug 2022</span>
+                    </div>
+                    <p class="xp-loc">Surakarta, Indonesia</p>
+                    <ul>
+                        <li><strong>Award-winning ML:</strong> built a CNN sign-language recognition system in TensorFlow (~70% accuracy) — <strong>Top 13 finalist out of 100s</strong> at the National Innovation &amp; Invention Competition (NIICe).</li>
+                        <li>Owned the full ML lifecycle — data collection, preprocessing, model training, deployment via a Laravel API for real-time mobile predictions.</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── PROJECTS ── -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-head">
+                <h2>Featured projects</h2>
+                <span class="count">// 8 of many</span>
+            </div>
+
+            <div class="grid">
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://dolanan.lori.my.id/" target="_blank" rel="noopener">Dolanan</a></h3>
+                        <span class="pc-badge">live</span>
+                    </div>
+                    <p class="pc-desc">
+                        Offline-first PWA hub of 12 casual local-multiplayer games &mdash; chess
+                        (with bot), ludo, werewolf, congklak, halma, and more. Pass-the-phone
+                        and hotseat. Trilingual (EN / ID / JW), no accounts, no telemetry.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">Vanilla JS</span>
+                        <span class="tech">PWA</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://dolanan.lori.my.id/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live demo
+                        </a>
+                        <a href="https://github.com/chud-lori/dolanan" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://ethok.lori.my.id/" target="_blank" rel="noopener">Ethok-Ethok</a></h3>
+                        <span class="pc-badge">live</span>
+                    </div>
+                    <p class="pc-desc">
+                        Social deduction party game inspired by Undercover. Pass-the-phone reveal,
+                        1000+ word pairs across English and Bahasa Indonesia, 3&ndash;20 players with
+                        Undercover and Mr.&nbsp;White roles. Pure static SPA &mdash; no backend, no build.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">Vanilla JS</span>
+                        <span class="tech">PWA</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://ethok.lori.my.id/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live demo
+                        </a>
+                        <a href="https://github.com/chud-lori/ethok" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://finance.lori.my.id/" target="_blank" rel="noopener">Finan App</a></h3>
+                        <span class="pc-badge">live</span>
+                    </div>
+                    <p class="pc-desc">
+                        Free, private personal finance tracker with running balance, smart category
+                        prediction, anomaly alerts, and 10 planning tools (&ldquo;can I afford this?&rdquo;,
+                        &ldquo;when can I retire?&rdquo;). Built for people who hate spreadsheets and subscriptions.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Node.js</span>
+                        <span class="tech">PostgreSQL</span>
+                        <span class="tech">OAuth</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://finance.lori.my.id/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live demo
+                        </a>
+                        <a href="https://github.com/chud-lori/finan-app" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://sinepil.lori.my.id/" target="_blank" rel="noopener">SinepilStream</a></h3>
+                        <span class="pc-badge">live</span>
+                    </div>
+                    <p class="pc-desc">
+                        Lightweight self-hosted movie streaming aggregator. Scrapes content on the fly,
+                        wraps third-party players to block popunder ads via a srcdoc trick, server-side
+                        cache in SQLite. Single-file Express app, deploys with one command.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Node.js</span>
+                        <span class="tech">Express</span>
+                        <span class="tech">SQLite</span>
+                        <span class="tech">Cheerio</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://sinepil.lori.my.id/" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live demo
+                        </a>
+                        <a href="https://github.com/chud-lori/Sinepil-Stream" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/go-boilerplate" target="_blank" rel="noopener">Go Boilerplate</a></h3>
+                        <span class="pc-badge">★ 4</span>
+                    </div>
+                    <p class="pc-desc">
+                        Production-ready Go boilerplate built around Clean Architecture. Includes REST + gRPC,
+                        circuit breakers (gobreaker), Redis caching &amp; pessimistic locking, PostgreSQL with
+                        testcontainers, structured logging, and CI. The base I reuse for every Go service.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Go</span>
+                        <span class="tech">PostgreSQL</span>
+                        <span class="tech">Redis</span>
+                        <span class="tech">gRPC</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://github.com/chud-lori/go-boilerplate" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/rusty-requester" target="_blank" rel="noopener">Rusty Requester</a></h3>
+                        <span class="pc-badge">native</span>
+                    </div>
+                    <p class="pc-desc">
+                        Native API client built in Rust + egui as a lightweight alternative to Postman.
+                        ~10 MB of RAM vs Postman's 500 MB+, no Electron, no telemetry, local storage only.
+                        Built it for myself; ended up using it daily.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Rust</span>
+                        <span class="tech">egui</span>
+                        <span class="tech">macOS</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://github.com/chud-lori/rusty-requester" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+<!--
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/property-99" target="_blank" rel="noopener">Property System</a></h3>
+                        <span class="pc-badge">microservices</span>
+                    </div>
+                    <p class="pc-desc">
+                        Three-service architecture (Listing, User, Public) with circuit breakers between
+                        services to prevent cascading failures, plus Redis caching to dodge the N+1 user
+                        lookup. A pragmatic take on microservice resilience patterns.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Go</span>
+                        <span class="tech">Redis</span>
+                        <span class="tech">Docker</span>
+                        <span class="tech">Circuit Breaker</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://github.com/chud-lori/property-99" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+ -->
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/medium-blog-mcp" target="_blank" rel="noopener">Blog MCP Server</a></h3>
+                        <span class="pc-badge">AI</span>
+                    </div>
+                    <p class="pc-desc">
+                        MCP server that exposes 100+ of my Medium blog posts as searchable knowledge for
+                        AI assistants via semantic search (RAG). Built with ChromaDB; plugs into Claude
+                        Desktop and Antigravity to give the model my own writing as context.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Python</span>
+                        <span class="tech">ChromaDB</span>
+                        <span class="tech">MCP</span>
+                        <span class="tech">RAG</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="https://github.com/chud-lori/medium-blog-mcp" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── MORE ── -->
+    <section>
+        <div class="container">
+            <div class="section-head">
+                <h2>More from the lab</h2>
+                <span class="count">// also worth a look</span>
+            </div>
+            <div class="compact-list">
+                <a class="compact-item" href="https://github.com/chud-lori/loan-system" target="_blank" rel="noopener">
+                    <span class="ci-title">Loan Origination System <span class="arrow">→</span></span>
+                    <p>Go web service for loan applications, layered on the Clean Architecture boilerplate.</p>
+                </a>
+                <a class="compact-item" href="https://github.com/chud-lori/transfer-system" target="_blank" rel="noopener">
+                    <span class="ci-title">Transfer System <span class="arrow">→</span></span>
+                    <p>Account &amp; transaction backend in Go + PostgreSQL with graceful shutdown.</p>
+                </a>
+                <a class="compact-item" href="https://github.com/chud-lori/async-rabbit-python-protobuf" target="_blank" rel="noopener">
+                    <span class="ci-title">Async RabbitMQ + Protobuf <span class="arrow">→</span></span>
+                    <p>Python async messaging with Protobuf-encoded payloads over RabbitMQ.</p>
+                </a>
+                <a class="compact-item" href="https://github.com/chud-lori/flask-boilerplate" target="_blank" rel="noopener">
+                    <span class="ci-title">Flask Boilerplate <span class="arrow">→</span></span>
+                    <p>Python counterpart to the Go boilerplate — Clean Architecture for Flask APIs.</p>
+                </a>
+                <a class="compact-item" href="https://github.com/chud-lori/blogify" target="_blank" rel="noopener">
+                    <span class="ci-title">Blogify <span class="arrow">→</span></span>
+                    <p>React + Vite + Tailwind frontend for the Go boilerplate's blog backend.</p>
+                </a>
+                <a class="compact-item" href="https://github.com/chud-lori/hashmap-implementation" target="_blank" rel="noopener">
+                    <span class="ci-title">Hashmap in C <span class="arrow">→</span></span>
+                    <p>From-scratch hashmap implementation. For the love of pointers.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-head">
+                <h2>Skills</h2>
+                <span class="count">// stack</span>
+            </div>
+            <div class="skills">
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>Go</li><li>Python</li><li>PHP</li><li>JavaScript</li><li>Javascript</li><li>C</li><li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Backend</h3>
+                    <ul>
+                        <li>Clean Architecture</li><li>REST</li><li>gRPC</li><li>Microservices</li><li>FastAPI</li><li>Laravel</li><li>Circuit Breaker</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Data</h3>
+                    <ul>
+                        <li>PostgreSQL</li><li>Elasticsearch</li><li>MongoDB</li><li>Redis</li><li>RabbitMQ</li><li>Protobuf</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Cloud &amp; Infra</h3>
+                    <ul>
+                        <li>AWS (SQS, IVS)</li><li>Kubernetes</li><li>Docker</li><li>Nginx</li><li>Linux</li><li>CI/CD</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Observability &amp; AI</h3>
+                    <ul>
+                        <li>New Relic</li><li>Grafana / Loki</li><li>LangChain</li><li>LlamaIndex</li><li>RAG</li><li>TensorFlow</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Practices</h3>
+                    <ul>
+                        <li>SOLID</li><li>TDD</li><li>Security / CTF</li><li>Code review</li><li>Mentoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── WRITING ── -->
+    <section id="writing">
+        <div class="container-narrow">
+            <div class="section-head">
+                <h2>Writing</h2>
+                <span class="count">// from the blog</span>
+            </div>
+            <div class="writing-list">
+                <a class="writing-item" href="https://lori.my.id/posts/system-operator-shift/" target="_blank" rel="noopener">
+                    <span class="w-date">Mar 2026</span>
+                    <span class="w-body">
+                        <span class="w-title">The "System Operator" Shift: Why AI Agents Won't Replace Senior Engineers</span>
+                        <span class="w-excerpt">Where AI handles routine work and where experienced engineers still win — architectural judgement, system design, the parts that don't compress.</span>
+                    </span>
+                    <span class="w-arrow">→</span>
+                </a>
+                <a class="writing-item" href="https://lori.my.id/posts/memory-locality-go/" target="_blank" rel="noopener">
+                    <span class="w-date">Aug 2025</span>
+                    <span class="w-body">
+                        <span class="w-title">Memory Locality: Optimize Your Go Code</span>
+                        <span class="w-excerpt">Slice of pointers vs. slice of structs — when CPU cache lines decide your throughput, and how to choose without guessing.</span>
+                    </span>
+                    <span class="w-arrow">→</span>
+                </a>
+                <a class="writing-item" href="https://lori.my.id/posts/observability-log-pipeline/" target="_blank" rel="noopener">
+                    <span class="w-date">Jan 2025</span>
+                    <span class="w-body">
+                        <span class="w-title">Building an Observability Pipeline for Go with Grafana, Loki &amp; Promtail</span>
+                        <span class="w-excerpt">A practical walkthrough of the logging stack I use to debug distributed Go services without grepping nine SSH sessions.</span>
+                    </span>
+                    <span class="w-arrow">→</span>
+                </a>
+                <a class="writing-item" href="https://lori.my.id/posts/hashmap-chain-open/" target="_blank" rel="noopener">
+                    <span class="w-date">Jan 2025</span>
+                    <span class="w-body">
+                        <span class="w-title">HashMap: Separate Chaining vs. Open Addressing — the What and the How</span>
+                        <span class="w-excerpt">Two ways to deal with collisions, what they cost in cache misses and load factor, and when each one is the right call.</span>
+                    </span>
+                    <span class="w-arrow">→</span>
+                </a>
+                <a class="writing-item" href="https://lori.my.id/posts/why-signed-unsigned-comparison/" target="_blank" rel="noopener">
+                    <span class="w-date">Jan 2025</span>
+                    <span class="w-body">
+                        <span class="w-title">Why <code style="background:var(--surface-2);padding:1px 5px;border-radius:3px;font-size:0.78rem;color:var(--accent)">signed -10</code> is greater than <code style="background:var(--surface-2);padding:1px 5px;border-radius:3px;font-size:0.78rem;color:var(--accent)">unsigned 5</code> in C</span>
+                        <span class="w-excerpt">An implicit type conversion that bites every C beginner once. Tracing exactly how the comparison flips and what to do about it.</span>
+                    </span>
+                    <span class="w-arrow">→</span>
+                </a>
+            </div>
+            <div class="writing-more">
+                <a href="https://lori.my.id/" target="_blank" rel="noopener">
+                    Read more on lori.my.id →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── LINKS (linktree-style, kept from original) ── -->
+    <section id="links">
+        <div class="container-narrow">
+            <div class="section-head">
+                <h2>Links &amp; contact</h2>
+                <span class="count">// say hi</span>
+            </div>
+            <div class="contact-card">
+                <img src="/me.jpg" class="avatar-sm" alt="Lori" width="64" height="64">
+                <div class="info">
+                    <p class="name">Lori</p>
+                    <p class="role">Software Engineer · <span class="accent">Open to opportunities</span></p>
+                </div>
+            </div>
+
+            <div class="quick-links">
+
+                <div class="section-label">Blog</div>
+
+                <a href="https://lori.my.id/" class="link-card tech" target="_blank" rel="noopener noreferrer">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8"/><path d="M12 16v4"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">Tech Blog</span>
+                        <span class="card-desc">Development articles &amp; notes</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="https://chud-lori.medium.com/" class="link-card literature" target="_blank" rel="noopener noreferrer">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5v-13A2.5 2.5 0 0 1 6.5 3Z"/><path d="M8 7h8"/><path d="M8 11h8"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">Literature</span>
+                        <span class="card-desc">Essays &amp; short stories on Medium</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <div class="section-label">Apps</div>
+
+                <a href="https://finance.lori.my.id/" class="link-card finance" target="_blank" rel="noopener noreferrer">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 2v20"/><path d="M17 6.5c0-1.66-2.24-3-5-3s-5 1.34-5 3 2.24 3 5 3 5 1.34 5 3-2.24 3-5 3-5-1.34-5-3"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">Finance App</span>
+                        <span class="card-desc">Personal finance tracker</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="https://sinepil.lori.my.id/" class="link-card stream" target="_blank" rel="noopener noreferrer">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/><path d="M7 5l2 4"/><path d="M15 5l2 4"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">SinepilStream</span>
+                        <span class="card-desc">Watch movies without ads</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="https://dolanan.lori.my.id/" class="link-card dolanan" target="_blank" rel="noopener noreferrer">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M6 12h4"/><path d="M8 10v4"/><path d="M15 11h.01"/><path d="M18 13h.01"/><path d="M7 18h10a4 4 0 0 0 3.87-5l-1.2-4A4 4 0 0 0 15.83 6H8.17a4 4 0 0 0-3.84 3l-1.2 4A4 4 0 0 0 7 18Z"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">Dolanan</span>
+                        <span class="card-desc">Offline-first hub of casual party games</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="https://ethok.lori.my.id/" class="link-card ethok" target="_blank" rel="noopener noreferrer">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M5 21a7 7 0 0 1 14 0"/><path d="M12 10v3"/><path d="M9 15h6"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">Ethok-Ethok</span>
+                        <span class="card-desc">Social deduction party game</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+                <a href="https://ldr.lori.my.id/" class="link-card ldr" target="_blank" rel="noopener noreferrer">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><path d="M12 20s-6.5-4.35-8.5-8A4.9 4.9 0 0 1 8 5.5c1.66 0 3.01.8 4 2.09A4.94 4.94 0 0 1 16 5.5 4.9 4.9 0 0 1 20.5 12c-2 3.65-8.5 8-8.5 8Z"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">LDR</span>
+                        <span class="card-desc">Platform for long-distance relationships</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <div class="section-label">Connect</div>
+
+                <a href="#" class="link-card social" id="email-link" data-email="reachme@lori.my.id">
+                    <span class="card-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+                    </span>
+                    <span class="card-body">
+                        <span class="card-title">Email</span>
+                        <span class="card-desc">reachme@lori.my.id — click to copy</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="https://github.com/chud-lori" class="link-card social" target="_blank" rel="noopener noreferrer">
+                    <svg class="brand-icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.627-5.373-12-12-12"/></svg>
+                    <span class="card-body">
+                        <span class="card-title">GitHub</span>
+                        <span class="card-desc">Open source projects &amp; code</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+                <a href="https://www.linkedin.com/in/chud-lori/" class="link-card social" target="_blank" rel="noopener noreferrer">
+                    <svg class="brand-icon" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <span class="card-body">
+                        <span class="card-title">LinkedIn</span>
+                        <span class="card-desc">Professional profile</span>
+                    </span>
+                    <svg class="card-arrow" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div>© <span id="year">2026</span> Lori. Built with HTML, CSS &amp; stubbornness.</div>
+        <div class="built">profile.lori.my.id</div>
+    </div>
+</footer>
+
+<div class="toast" id="toast">Email copied</div>
+
+<script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Cursor glow — only for fine pointers (mouse), not touch
+    if (window.matchMedia('(pointer: fine)').matches) {
+        const glow = document.getElementById('cursor-glow');
+        glow.style.display = 'block';
+        document.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top  = e.clientY + 'px';
+        });
+    }
+
+    // Copy email to clipboard
+    const emailLink = document.getElementById('email-link');
+    const toast = document.getElementById('toast');
+    emailLink?.addEventListener('click', e => {
+        e.preventDefault();
+        const email = emailLink.dataset.email;
+        navigator.clipboard?.writeText(email).then(() => {
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 1800);
+        }).catch(() => { window.location.href = 'mailto:' + email; });
+    });
+
+    // Subtle nav highlight on scroll
+    const sections = ['about', 'experience', 'projects', 'skills', 'writing', 'links'];
+    const links = Object.fromEntries(
+        sections.map(id => [id, document.querySelector(`.nav-links a[href="#${id}"]`)])
+    );
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                Object.values(links).forEach(a => a && (a.style.color = ''));
+                const a = links[entry.target.id];
+                if (a) a.style.color = 'var(--accent)';
+            }
+        });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+    });
+</script>
+</body>
+</html>
