@@ -263,14 +263,48 @@
         }
         .social-row a:hover { color: var(--accent); border-color: var(--accent); }
         .social-row .dot-sep { color: var(--text-muted); user-select: none; }
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 24px;
+            animation: fadeInUp 0.5s 0.3s ease-out both;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 42px;
+            padding: 0 16px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: transform 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
+        }
+        .cta-btn:hover { transform: translateY(-2px); color: var(--text); }
+        .cta-primary {
+            background: var(--accent);
+            color: #052e23;
+            border: 1px solid rgba(16,185,129,0.55);
+            box-shadow: 0 10px 24px rgba(16,185,129,0.2);
+        }
+        .cta-primary:hover { background: #34d399; color: #022c22; }
+        .cta-secondary {
+            background: var(--surface);
+            color: var(--text);
+            border: 1px solid var(--border-strong);
+        }
+        .cta-secondary:hover { border-color: var(--accent); background: rgba(16,185,129,0.08); }
 
-        /* ── Stats strip ── */
+        /* ── Proof strip ── */
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 0;
-            margin: 40px auto 0;
-            max-width: 460px;
+            margin: 34px 0 0;
+            max-width: 640px;
             border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
             padding: 18px 0;
@@ -506,6 +540,34 @@
         .pc-links a:hover { color: var(--accent); }
         .pc-links svg { width: 13px; height: 13px; }
 
+        /* ── Project notes ── */
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+            gap: 14px;
+        }
+        .note-card {
+            background: var(--surface);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+        }
+        .note-card h3 {
+            margin: 0 0 10px;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+        .note-card p {
+            margin: 0 0 10px;
+            color: var(--text-dim);
+            font-size: 0.84rem;
+            line-height: 1.6;
+        }
+        .note-card p:last-child { margin-bottom: 0; }
+        .note-card strong { color: var(--text); font-weight: 600; }
+
         /* ── More repos (compact) ── */
         .compact-list {
             display: grid;
@@ -532,6 +594,13 @@
         .compact-item p { margin: 4px 0 0; color: var(--text-dim); font-size: 0.78rem; }
         .compact-item .arrow { transition: transform 0.2s; }
         .compact-item:hover .arrow { transform: translateX(3px); }
+        .inline-proof {
+            color: var(--text-dim);
+            text-decoration: underline;
+            text-decoration-color: var(--accent);
+            text-underline-offset: 3px;
+        }
+        .inline-proof:hover { color: var(--accent); }
 
         /* ── Skills ── */
         .skills {
@@ -737,15 +806,16 @@
         <div class="container-narrow">
             <h1>Lori</h1>
             <p class="lead">
-                I'm a software engineer based in Surakarta, Indonesia. Currently
-                <strong>Senior Backend Engineer at <a href="https://www.99.co/" target="_blank" rel="noopener">99.co</a></strong>,
-                building PropTech systems that serve 70M+ users. Previously
-                <a href="https://www.kredivo.com/" target="_blank" rel="noopener">Kredivo</a> (FinTech, Core Banking)
+                I build <strong>backend systems, internal tools, and performance-conscious products</strong>.
+                Currently <strong>Senior Backend Engineer at <a href="https://www.99.co/" target="_blank" rel="noopener">99.co</a></strong>,
+                shipping PropTech systems for 70M+ users. Previously at
+                <a href="https://www.kredivo.com/" target="_blank" rel="noopener">Kredivo</a> (core banking, payments)
                 and <a href="https://jublia.com/" target="_blank" rel="noopener">Jublia</a> (AI event matchmaking).
             </p>
             <p class="lead lead-quiet">
-                I write about engineering at <a href="https://lori.my.id/" target="_blank" rel="noopener">lori.my.id</a>
-                and ship side projects in Go, Python, PHP, and Javascript. Currently open to new opportunities.
+                I work mostly in Go and Python, care about clean architecture, observability, and pragmatic security,
+                and I write about engineering at <a href="https://lori.my.id/" target="_blank" rel="noopener">lori.my.id</a>.
+                Open to senior backend and systems-oriented roles.
             </p>
             <div class="social-row">
                 <a href="https://github.com/chud-lori" target="_blank" rel="noopener">GitHub</a>
@@ -755,6 +825,25 @@
                 <a href="mailto:reachme@lori.my.id">Email</a>
                 <span class="dot-sep">·</span>
                 <a href="https://lori.my.id/" target="_blank" rel="noopener">Blog</a>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="cta-btn cta-primary">See selected work</a>
+                <a href="mailto:reachme@lori.my.id" class="cta-btn cta-secondary">Email me</a>
+                <a href="#writing" class="cta-btn cta-secondary">Read writing</a>
+            </div>
+            <div class="stats" aria-label="Selected wins">
+                <div class="stat">
+                    <span class="num">70M+</span>
+                    <span class="lbl">users served</span>
+                </div>
+                <div class="stat">
+                    <span class="num">6+</span>
+                    <span class="lbl">microservices shipped across</span>
+                </div>
+                <div class="stat">
+                    <span class="num">$200k/mo</span>
+                    <span class="lbl">revenue leak prevented</span>
+                </div>
             </div>
         </div>
     </section>
@@ -767,15 +856,16 @@
                 <span class="count">// who</span>
             </div>
             <p>
-                I started with Linux server admin in vocational school and have been writing
-                software professionally for 5+ years — these days mostly Go and Python backends.
-                I gravitate toward systems work: clean architecture, observability, and the
-                pragmatic security mindset I picked up from CTF competitions
-                (1st place at National Gemastik, Network Security).
+                I like systems with hard edges: payment flows that must stay atomic, APIs that should
+                degrade predictably under failure, and internal tools that remove operational drag instead
+                of adding more abstraction. Most of my work lives in Go and Python, usually around
+                backend services, data flow, observability, and developer-facing tooling.
             </p>
             <p>
-                Outside paid work I ship side projects to scratch my own itches and write about
-                engineering at <a href="https://lori.my.id/" target="_blank" rel="noopener">lori.my.id</a>.
+                I started on Linux and security, still think with that bias, and tend to optimize for
+                pragmatic architecture over novelty. Outside paid work I build tools to scratch my own
+                itches and write about performance, debugging, and systems thinking at
+                <a href="https://lori.my.id/" target="_blank" rel="noopener">lori.my.id</a>.
             </p>
         </div>
     </section>
@@ -798,6 +888,8 @@
                     <ul>
                         <li><strong>Shipped a $300–$1,080/mo paid feature solo in &lt;2 months</strong> across 6+ microservices with atomic payment processing — zero incidents at launch.</li>
                         <li><strong>Built search-optimization system serving 70M+ users</strong> with dynamic SEO content across 6+ property segments.</li>
+                        <li><strong>Replaced a legacy commute backend</strong> with a self-hosted Valhalla 3.5.1 routing engine on Singapore OSM, supporting walk, drive, and GTFS transit for reachable listings within n minutes.</li>
+                        <li><strong>Benchmarked and calibrated routing accuracy</strong> against OneMap, TravelTime, Google Maps, and gothere; built GTFS preprocessing over 8.2M <code>stop_times</code> rows and 72K interchange entries to restore correct MRT-vs-bus routing.</li>
                         <li><strong>Security fix: identified &amp; closed a credit vulnerability preventing ~$200k/month revenue leak.</strong></li>
                     </ul>
                 </article>
@@ -848,7 +940,7 @@
                     </div>
                     <p class="xp-loc">Surakarta, Indonesia</p>
                     <ul>
-                        <li><strong>Award-winning ML:</strong> built a CNN sign-language recognition system in TensorFlow (~70% accuracy) — <strong>Top 13 finalist out of 100s</strong> at the National Innovation &amp; Invention Competition (NIICe).</li>
+                        <li><strong>Award-winning ML:</strong> built a CNN sign-language recognition system in TensorFlow (~70% accuracy) — <strong>Top 13 finalist out of 100s</strong> at the National Innovation &amp; Invention Competition (NIICe). <a class="inline-proof" href="https://www.youtube.com/watch?v=FcXdlHRDPTg" target="_blank" rel="noopener">Demo video</a>.</li>
                         <li>Owned the full ML lifecycle — data collection, preprocessing, model training, deployment via a Laravel API for real-time mobile predictions.</li>
                     </ul>
                 </article>
@@ -869,26 +961,26 @@
 
                 <article class="project-card">
                     <div class="pc-head">
-                        <h3 class="pc-title"><a href="https://dolanan.lori.my.id/" target="_blank" rel="noopener">Dolanan</a></h3>
-                        <span class="pc-badge">live</span>
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/go-boilerplate" target="_blank" rel="noopener">Go Boilerplate</a></h3>
+                        <span class="pc-badge">★ 4</span>
                     </div>
                     <p class="pc-desc">
-                        Offline-first PWA hub of 12 casual local-multiplayer games &mdash; chess
-                        (with bot), ludo, werewolf, congklak, halma, and more. Pass-the-phone
-                        and hotseat. Trilingual (EN / ID / JW), no accounts, no telemetry.
+                        Production-ready Go service template I actually reuse. Clean Architecture with REST +
+                        gRPC, Redis caching, pessimistic locking, circuit breakers, testcontainers, and CI,
+                        so a new service starts from operational defaults instead of tutorial scaffolding.
                     </p>
                     <div class="pc-tech">
-                        <span class="tech">HTML</span>
-                        <span class="tech">CSS</span>
-                        <span class="tech">Vanilla JS</span>
-                        <span class="tech">PWA</span>
+                        <span class="tech">Go</span>
+                        <span class="tech">PostgreSQL</span>
+                        <span class="tech">Redis</span>
+                        <span class="tech">gRPC</span>
                     </div>
                     <div class="pc-links">
-                        <a href="https://dolanan.lori.my.id/" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            Live demo
+                        <a href="#note-go-boilerplate">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                            Notes
                         </a>
-                        <a href="https://github.com/chud-lori/dolanan" target="_blank" rel="noopener">
+                        <a href="https://github.com/chud-lori/go-boilerplate" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
                             Source
                         </a>
@@ -897,26 +989,109 @@
 
                 <article class="project-card">
                     <div class="pc-head">
-                        <h3 class="pc-title"><a href="https://ethok.lori.my.id/" target="_blank" rel="noopener">Ethok-Ethok</a></h3>
-                        <span class="pc-badge">live</span>
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/rusty-requester" target="_blank" rel="noopener">Rusty Requester</a></h3>
+                        <span class="pc-badge">native</span>
                     </div>
                     <p class="pc-desc">
-                        Social deduction party game inspired by Undercover. Pass-the-phone reveal,
-                        1000+ word pairs across English and Bahasa Indonesia, 3&ndash;20 players with
-                        Undercover and Mr.&nbsp;White roles. Pure static SPA &mdash; no backend, no build.
+                        Native API client in Rust + egui built to replace Postman in my own workflow.
+                        Uses roughly 10 MB RAM instead of Postman's 500 MB+, skips Electron entirely,
+                        stores everything locally, and starts fast enough to feel like a real desktop tool.
                     </p>
                     <div class="pc-tech">
-                        <span class="tech">HTML</span>
-                        <span class="tech">CSS</span>
-                        <span class="tech">Vanilla JS</span>
-                        <span class="tech">PWA</span>
+                        <span class="tech">Rust</span>
+                        <span class="tech">egui</span>
+                        <span class="tech">macOS</span>
                     </div>
                     <div class="pc-links">
-                        <a href="https://ethok.lori.my.id/" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                            Live demo
+                        <a href="#note-rusty-requester">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                            Notes
                         </a>
-                        <a href="https://github.com/chud-lori/ethok" target="_blank" rel="noopener">
+                        <a href="https://github.com/chud-lori/rusty-requester" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="#note-routing-engine">Routing Engine for Reachable Listings</a></h3>
+                        <span class="pc-badge">private work</span>
+                    </div>
+                    <p class="pc-desc">
+                        Replaced a legacy commute backend with a self-hosted Valhalla 3.5.1 routing engine
+                        and live isochrones on Singapore OSM. Built multimodal walk, drive, and GTFS transit
+                        routing, then calibrated it against external providers to make reachability trustworthy.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Valhalla</span>
+                        <span class="tech">OSM</span>
+                        <span class="tech">GTFS</span>
+                        <span class="tech">Redis</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="#note-routing-engine">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                            Notes
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/heart-disease-knn-flask" target="_blank" rel="noopener">Heart Disease KNN Flask</a></h3>
+                        <span class="pc-badge">paper</span>
+                    </div>
+                    <p class="pc-desc">
+                        Heart-disease prediction system built in Python Flask from my published research.
+                        Implemented a KNN-based workflow where z-score normalization improved accuracy
+                        from 65.93% to 82.41%, then wrapped it in a lightweight web app for practical use.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Python</span>
+                        <span class="tech">Flask</span>
+                        <span class="tech">KNN</span>
+                        <span class="tech">ML</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="#note-heart-disease-knn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                            Notes
+                        </a>
+                        <a href="https://ijs.uobaghdad.edu.iq/index.php/eijs/article/view/3397" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                            Paper
+                        </a>
+                        <a href="https://github.com/chud-lori/heart-disease-knn-flask" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+                            Source
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="pc-head">
+                        <h3 class="pc-title"><a href="https://github.com/chud-lori/medium-blog-mcp" target="_blank" rel="noopener">Blog MCP Server</a></h3>
+                        <span class="pc-badge">AI</span>
+                    </div>
+                    <p class="pc-desc">
+                        MCP server that turns 100+ of my blog posts into searchable context for AI assistants.
+                        Built with ChromaDB and semantic retrieval so Claude Desktop and other MCP clients can
+                        answer with my own writing instead of generic internet mush.
+                    </p>
+                    <div class="pc-tech">
+                        <span class="tech">Python</span>
+                        <span class="tech">ChromaDB</span>
+                        <span class="tech">MCP</span>
+                        <span class="tech">RAG</span>
+                    </div>
+                    <div class="pc-links">
+                        <a href="#note-blog-mcp">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+                            Notes
+                        </a>
+                        <a href="https://github.com/chud-lori/medium-blog-mcp" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
                             Source
                         </a>
@@ -952,127 +1127,68 @@
 
                 <article class="project-card">
                     <div class="pc-head">
-                        <h3 class="pc-title"><a href="https://sinepil.lori.my.id/" target="_blank" rel="noopener">SinepilStream</a></h3>
+                        <h3 class="pc-title"><a href="https://dolanan.lori.my.id/" target="_blank" rel="noopener">Dolanan</a></h3>
                         <span class="pc-badge">live</span>
                     </div>
                     <p class="pc-desc">
-                        Lightweight self-hosted movie streaming aggregator. Scrapes content on the fly,
-                        wraps third-party players to block popunder ads via a srcdoc trick, server-side
-                        cache in SQLite. Single-file Express app, deploys with one command.
+                        Offline-first PWA hub of 12 casual local-multiplayer games &mdash; chess
+                        (with bot), ludo, werewolf, congklak, halma, and more. Pass-the-phone
+                        and hotseat. Trilingual (EN / ID / JW), no accounts, no telemetry.
                     </p>
                     <div class="pc-tech">
-                        <span class="tech">Node.js</span>
-                        <span class="tech">Express</span>
-                        <span class="tech">SQLite</span>
-                        <span class="tech">Cheerio</span>
+                        <span class="tech">HTML</span>
+                        <span class="tech">CSS</span>
+                        <span class="tech">Vanilla JS</span>
+                        <span class="tech">PWA</span>
                     </div>
                     <div class="pc-links">
-                        <a href="https://sinepil.lori.my.id/" target="_blank" rel="noopener">
+                        <a href="https://dolanan.lori.my.id/" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
                             Live demo
                         </a>
-                        <a href="https://github.com/chud-lori/Sinepil-Stream" target="_blank" rel="noopener">
+                        <a href="https://github.com/chud-lori/dolanan" target="_blank" rel="noopener">
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
                             Source
                         </a>
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="pc-head">
-                        <h3 class="pc-title"><a href="https://github.com/chud-lori/go-boilerplate" target="_blank" rel="noopener">Go Boilerplate</a></h3>
-                        <span class="pc-badge">★ 4</span>
-                    </div>
-                    <p class="pc-desc">
-                        Production-ready Go boilerplate built around Clean Architecture. Includes REST + gRPC,
-                        circuit breakers (gobreaker), Redis caching &amp; pessimistic locking, PostgreSQL with
-                        testcontainers, structured logging, and CI. The base I reuse for every Go service.
-                    </p>
-                    <div class="pc-tech">
-                        <span class="tech">Go</span>
-                        <span class="tech">PostgreSQL</span>
-                        <span class="tech">Redis</span>
-                        <span class="tech">gRPC</span>
-                    </div>
-                    <div class="pc-links">
-                        <a href="https://github.com/chud-lori/go-boilerplate" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-                            Source
-                        </a>
-                    </div>
-                </article>
+            </div>
+        </div>
+    </section>
 
-                <article class="project-card">
-                    <div class="pc-head">
-                        <h3 class="pc-title"><a href="https://github.com/chud-lori/rusty-requester" target="_blank" rel="noopener">Rusty Requester</a></h3>
-                        <span class="pc-badge">native</span>
-                    </div>
-                    <p class="pc-desc">
-                        Native API client built in Rust + egui as a lightweight alternative to Postman.
-                        ~10 MB of RAM vs Postman's 500 MB+, no Electron, no telemetry, local storage only.
-                        Built it for myself; ended up using it daily.
-                    </p>
-                    <div class="pc-tech">
-                        <span class="tech">Rust</span>
-                        <span class="tech">egui</span>
-                        <span class="tech">macOS</span>
-                    </div>
-                    <div class="pc-links">
-                        <a href="https://github.com/chud-lori/rusty-requester" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-                            Source
-                        </a>
-                    </div>
+    <section id="notes">
+        <div class="container">
+            <div class="section-head">
+                <h2>Architecture notes</h2>
+                <span class="count">// how I think</span>
+            </div>
+            <div class="notes-grid">
+                <article class="note-card" id="note-go-boilerplate">
+                    <h3>Go Boilerplate</h3>
+                    <p><strong>Goal:</strong> start new services with production defaults already in place instead of rebuilding the same infrastructure decisions from scratch.</p>
+                    <p><strong>Tradeoff:</strong> a little more setup up front, but the payoff is consistent service boundaries, testable modules, and fewer ad hoc decisions under delivery pressure.</p>
                 </article>
-<!--
-                <article class="project-card">
-                    <div class="pc-head">
-                        <h3 class="pc-title"><a href="https://github.com/chud-lori/property-99" target="_blank" rel="noopener">Property System</a></h3>
-                        <span class="pc-badge">microservices</span>
-                    </div>
-                    <p class="pc-desc">
-                        Three-service architecture (Listing, User, Public) with circuit breakers between
-                        services to prevent cascading failures, plus Redis caching to dodge the N+1 user
-                        lookup. A pragmatic take on microservice resilience patterns.
-                    </p>
-                    <div class="pc-tech">
-                        <span class="tech">Go</span>
-                        <span class="tech">Redis</span>
-                        <span class="tech">Docker</span>
-                        <span class="tech">Circuit Breaker</span>
-                    </div>
-                    <div class="pc-links">
-                        <a href="https://github.com/chud-lori/property-99" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-                            Source
-                        </a>
-                    </div>
+                <article class="note-card" id="note-rusty-requester">
+                    <h3>Rusty Requester</h3>
+                    <p><strong>Goal:</strong> make an API client that feels native and disposable, so opening it for a quick request does not cost hundreds of megabytes or a full browser-stack boot.</p>
+                    <p><strong>Tradeoff:</strong> less plugin ecosystem than Postman, but much better startup feel, lower memory use, and tighter local-only ownership of request data.</p>
                 </article>
- -->
-                <article class="project-card">
-                    <div class="pc-head">
-                        <h3 class="pc-title"><a href="https://github.com/chud-lori/medium-blog-mcp" target="_blank" rel="noopener">Blog MCP Server</a></h3>
-                        <span class="pc-badge">AI</span>
-                    </div>
-                    <p class="pc-desc">
-                        MCP server that exposes 100+ of my Medium blog posts as searchable knowledge for
-                        AI assistants via semantic search (RAG). Built with ChromaDB; plugs into Claude
-                        Desktop and Antigravity to give the model my own writing as context.
-                    </p>
-                    <div class="pc-tech">
-                        <span class="tech">Python</span>
-                        <span class="tech">ChromaDB</span>
-                        <span class="tech">MCP</span>
-                        <span class="tech">RAG</span>
-                    </div>
-                    <div class="pc-links">
-                        <a href="https://github.com/chud-lori/medium-blog-mcp" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.24 3.34.95.1-.74.4-1.24.72-1.53-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.16 1.18.92-.26 1.9-.39 2.88-.39.98 0 1.96.13 2.88.39 2.2-1.49 3.16-1.18 3.16-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14 0 1.55-.01 2.79-.01 3.17 0 .31.21.67.8.55C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
-                            Source
-                        </a>
-                    </div>
+                <article class="note-card" id="note-routing-engine">
+                    <h3>Routing Engine for Reachable Listings</h3>
+                    <p><strong>Goal:</strong> replace a gothere-dependent commute backend and 16-hour precompute flow with self-hosted routing and live reachability on your own infra.</p>
+                    <p><strong>Tradeoff:</strong> owning Valhalla + GTFS means a harder data pipeline, but it unlocks provider independence, measurable calibration, and better control over transit correctness and matrix refreshes.</p>
                 </article>
-
+                <article class="note-card" id="note-heart-disease-knn">
+                    <h3>Heart Disease KNN Flask</h3>
+                    <p><strong>Goal:</strong> turn a machine-learning study into a usable web application so heart-disease prediction is not just a notebook result but something practical to interact with.</p>
+                    <p><strong>Tradeoff:</strong> KNN is simple and interpretable, but preprocessing matters heavily. In the paper, z-score normalization raised accuracy from 65.93% to 82.41%, which became the key implementation lesson.</p>
+                </article>
+                <article class="note-card" id="note-blog-mcp">
+                    <h3>Blog MCP Server</h3>
+                    <p><strong>Goal:</strong> give AI clients retrieval access to my own technical writing so answers can be grounded in my material instead of generic model priors.</p>
+                    <p><strong>Tradeoff:</strong> retrieval quality depends on chunking and indexing choices, so the interesting work is less “AI magic” and more practical search behavior.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -1105,6 +1221,18 @@
                     <span class="ci-title">Blogify <span class="arrow">→</span></span>
                     <p>React + Vite + Tailwind frontend for the Go boilerplate's blog backend.</p>
                 </a>
+                <a class="compact-item" href="https://github.com/chud-lori/Sinepil-Stream" target="_blank" rel="noopener">
+                    <span class="ci-title">SinepilStream <span class="arrow">→</span></span>
+                    <p>Self-hosted movie streaming aggregator with on-the-fly scraping and SQLite-backed caching.</p>
+                </a>
+                <a class="compact-item" href="https://www.youtube.com/watch?v=FcXdlHRDPTg" target="_blank" rel="noopener">
+                    <span class="ci-title">Sign Language Translator Demo <span class="arrow">→</span></span>
+                    <p>Research project demo: CNN-based sign-language recognition work from my university study.</p>
+                </a>
+                <a class="compact-item" href="https://github.com/chud-lori/ethok" target="_blank" rel="noopener">
+                    <span class="ci-title">Ethok-Ethok <span class="arrow">→</span></span>
+                    <p>Static social-deduction party game with pass-the-phone play and 1000+ bilingual word pairs.</p>
+                </a>
                 <a class="compact-item" href="https://github.com/chud-lori/hashmap-implementation" target="_blank" rel="noopener">
                     <span class="ci-title">Hashmap in C <span class="arrow">→</span></span>
                     <p>From-scratch hashmap implementation. For the love of pointers.</p>
@@ -1124,7 +1252,7 @@
                 <div class="skill-group">
                     <h3>Languages</h3>
                     <ul>
-                        <li>Go</li><li>Python</li><li>PHP</li><li>JavaScript</li><li>Javascript</li><li>C</li><li>SQL</li>
+                        <li>Go</li><li>Python</li><li>PHP</li><li>JavaScript</li><li>C</li><li>SQL</li>
                     </ul>
                 </div>
                 <div class="skill-group">
